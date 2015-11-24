@@ -1,10 +1,10 @@
-(def +version+ "0.6.2")
+(def +version+ "0.6.5-0")
 
 (set-env!
   :resource-paths #{"resources"}
   :dependencies [['adzerk/bootlaces   "0.1.9" :scope "test"]
                  ['cljsjs/boot-cljsjs "0.5.0" :scope "test"]
-                 ['cljsjs/react       "0.14.0-1" :scope "provided"]])
+                 ['cljsjs/react       "0.14.0-2" :scope "provided"]])
 
 (require '[adzerk.bootlaces :refer :all]
          '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -23,7 +23,7 @@
   (task-options! push {:ensure-branch nil :tag false})
   (comp
     (download :url (str "https://github.com/JedWatson/react-input-autosize/archive/v" +version+ ".zip")
-              :checksum "9b75515657de750d97a986f8c5bab0b7"
+              :checksum "C4CEE37EB3F83923578893CD567F17F2"
               :unzip true)
     (sift :move {#"^react-input-autosize-(.*)/dist/react-input-autosize\.js$"
                  "cljsjs/react-input-autosize/development/react-input-autosize.inc.js"
